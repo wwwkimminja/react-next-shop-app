@@ -32,7 +32,6 @@ const LoginClient = () => {
 
   return (
     <section className={styles.page}>
-      <Loader />
       <div className={styles.container}>
         <h1 className={styles.logo}>
           <Image src={LogoPath} alt="logo"/>
