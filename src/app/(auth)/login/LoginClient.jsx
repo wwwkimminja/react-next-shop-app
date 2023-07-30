@@ -32,49 +32,54 @@ const LoginClient = () => {
 
 
   return (
-    <section className={styles.page}>
-      <div className={styles.container}>
-        <h1 className={styles.logo}>
-          <Image src={LogoPath} alt="logo"/>
-        </h1>
-        <form onSubmit={loginUser} className={styles.form}>
-          {/* input */}
-            <Input
-              email
-              icon="letter"
-              id="email"
-              name="email"
-              label="E-mail"
-              placeholder='e-mail address'
-              className={styles.control}
-              value={email}
-              onChange={(e)=>setEmail(e.target.value)}
-            />
-          <div className={styles.group}>
-            {/* autoLogin,password change */}
-            <Input
-              password
-              icon="lock"
-              id="password"
-              name="password"
-              label="Password"
-              placeholder='password'
-              className={styles.control}
-              value={password}
-              onChange={(e)=>setPassword(e.target.value)}
-            />
-          </div>
-          <div className={styles.buttonGroup}>
-            {/* Button */}
-            button
-            <div>
+    <>
+    {isLoading&&<Loader/>}
+      <section className={styles.page}>
+        <div className={styles.container}>
+          <h1 className={styles.logo}>
+            <Image src={LogoPath} alt="logo"/>
+          </h1>
+          <form onSubmit={loginUser} className={styles.form}>
+            {/* input */}
+              <Input
+                email
+                icon="letter"
+                id="email"
+                name="email"
+                label="E-mail"
+                labelVisible
+                placeholder='e-mail address'
+                className={styles.control}
+                value={email}
+                onChange={(e)=>setEmail(e.target.value)}
+                />
+              <Input
+                password
+                icon="lock"
+                id="password"
+                name="password"
+                label="Password"
+                labelVisible
+                placeholder='password'
+                className={styles.control}
+                value={password}
+                onChange={(e)=>setPassword(e.target.value)}
+              />
+            <div className={styles.group}>
+              {/* autoLogin,password change */}
+            </div>
+            <div className={styles.buttonGroup}>
               {/* Button */}
               button
+              <div>
+                {/* Button */}
+                button
+              </div>
             </div>
-          </div>
-        </form>
-      </div>
-    </section>
+          </form>
+        </div>
+      </section>
+    </>
 
   )
 }
