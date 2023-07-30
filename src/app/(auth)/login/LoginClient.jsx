@@ -5,6 +5,7 @@ import LogoPath from '@/assets/colorful.svg'
 import { useRouter } from 'next/navigation'
 import styles from './Auth.module.scss'
 import Loader from '@/components/loader/Loader'
+import Input from '@/components/input/Input'
 
 
 const LoginClient = () => {
@@ -38,10 +39,30 @@ const LoginClient = () => {
         </h1>
         <form onSubmit={loginUser} className={styles.form}>
           {/* input */}
-            input
+            <Input
+              email
+              icon="letter"
+              id="email"
+              name="email"
+              label="E-mail"
+              placeholder='e-mail address'
+              className={styles.control}
+              value={email}
+              onChange={(e)=>setEmail(e.target.value)}
+            />
           <div className={styles.group}>
             {/* autoLogin,password change */}
-            autoLogin,password change
+            <Input
+              password
+              icon="lock"
+              id="password"
+              name="password"
+              label="Password"
+              placeholder='password'
+              className={styles.control}
+              value={password}
+              onChange={(e)=>setPassword(e.target.value)}
+            />
           </div>
           <div className={styles.buttonGroup}>
             {/* Button */}
