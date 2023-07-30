@@ -3,6 +3,8 @@ import Image from 'next/image'
 import React, { useState } from 'react'
 import LogoPath from '@/assets/colorful.svg'
 import { useRouter } from 'next/navigation'
+import styles from './Auth.module.scss'
+import Loader from '@/components/loader/Loader'
 
 
 const LoginClient = () => {
@@ -29,20 +31,25 @@ const LoginClient = () => {
 
 
   return (
-    <section>
-      <div>
-        <h1>
+    <section className={styles.page}>
+      <Loader />
+      <div className={styles.container}>
+        <h1 className={styles.logo}>
           <Image src={LogoPath} alt="logo"/>
         </h1>
-        <form onSubmit={loginUser}>
+        <form onSubmit={loginUser} className={styles.form}>
           {/* input */}
-          <div>
+            input
+          <div className={styles.group}>
             {/* autoLogin,password change */}
+            autoLogin,password change
           </div>
-          <div>
+          <div className={styles.buttonGroup}>
             {/* Button */}
+            button
             <div>
               {/* Button */}
+              button
             </div>
           </div>
         </form>
