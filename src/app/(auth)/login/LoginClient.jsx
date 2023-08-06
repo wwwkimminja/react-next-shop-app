@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation'
 import styles from './Auth.module.scss'
 import Loader from '@/components/loader/Loader'
 import Input from '@/components/input/Input'
+import AutoSignInCheckbox from '@/components/autoSignInCheckbox/AutoSignInCheckbox'
 
 
 const LoginClient = () => {
@@ -67,6 +68,10 @@ const LoginClient = () => {
               />
             <div className={styles.group}>
               {/* autoLogin,password change */}
+              <AutoSignInCheckbox
+                checked={isAutoLogin}
+                onChange={(e)=>setIsAutoLogin(e.target.checked)}
+              />
             </div>
             <div className={styles.buttonGroup}>
               {/* Button */}
