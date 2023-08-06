@@ -34,7 +34,9 @@
     color: #24292e;
     font-size: 13px;
 
-    //display:noneだと検索エンジンが読めない為
+    //display:noneだと
+    //画面上に出力しない
+    //検索エンジンが読めない
     &Hidden{
       position:absolute;
       clip-path:circle(0);
