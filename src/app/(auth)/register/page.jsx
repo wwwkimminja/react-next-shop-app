@@ -1,8 +1,12 @@
 import React from 'react'
+import RegisterClient from './RegisterClient'
 
 function Register() {
+
+  
+
   return (
-    <div>Register</div>
+    <RegisterClient/>
   )
 }
 
