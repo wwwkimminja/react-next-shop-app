@@ -8,7 +8,8 @@ import Loader from '@/components/loader/Loader'
 import Input from '@/components/input/Input'
 import AutoSignInCheckbox from '@/components/autoSignInCheckbox/AutoSignInCheckbox'
 import Divider from '@/components/divider/Divider'
-
+import Link from 'next/link'
+import Button from '@/components/button/Button'
 
 const LoginClient = () => {
   const [email, setEmail] = useState('')
@@ -76,13 +77,19 @@ const LoginClient = () => {
             </div>
             <div className={styles.buttonGroup}>
               {/* Button */}
-              button
+             <Button type="submit" width="100%">
+              Log in
+              </Button>
               <Divider/>
-              button
+              <Button width="100%" secondary>
+               <Link href={"/register"} >Sign in</Link> 
+              </Button>
               <Divider/>
               <div>
                 {/* Button */}
-                button
+                <Button onClick={signInWithGoogle}>
+                  Google Log in
+                </Button>
               </div>
             </div>
           </form>
