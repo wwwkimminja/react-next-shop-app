@@ -10,6 +10,9 @@ import AutoSignInCheckbox from '@/components/autoSignInCheckbox/AutoSignInCheckb
 import Divider from '@/components/divider/Divider'
 import Link from 'next/link'
 import Button from '@/components/button/Button'
+import { signInWithEmailAndPassword } from 'firebase/auth'
+import { auth } from '@/firebase/firebase'
+import { toast } from 'react-toastify'
 
 const LoginClient = () => {
   const [email, setEmail] = useState('')
@@ -26,6 +29,17 @@ const LoginClient = () => {
   const loginUser=(e)=>{
     e.preventDefault();
     setIsLoading(true);
+    
+    signInWithEmailAndPassword(auth,email,password)
+    .then(()=>{
+      setIsLoading(false);
+      toast.success('Login Success');
+      redirectUser();
+    })
+    .catch((error)=>{
+      setIsLoading(false);
+      toast.error(error.message)
+    })
 
   }
 
