@@ -1,8 +1,22 @@
 import React from 'react'
+import styles from './Heading.module.scss'
 
-function Heading() {
+function Heading({
+  title,
+  subTitle,
+  center
+}) {
   return (
-    <div>Heading</div>
+    <div className={styles.wrapper}>
+      <div className={center?styles.center:""}>
+        <div className={styles.title}>
+          {title}
+        </div>
+        <div className={styles.subtitle}>
+          {subTitle}
+        </div>
+      </div>
+    </div>
   )
 }
 
