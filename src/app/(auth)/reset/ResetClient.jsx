@@ -6,6 +6,9 @@ import Heading from '@/components/heading/Heading'
 import Input from '@/components/input/Input'
 import Button from '@/components/button/Button'
 import Link from 'next/link'
+import { sendPasswordResetEmail } from 'firebase/auth'
+import { auth } from '@/firebase/firebase'
+import { toast } from 'react-toastify'
 
 const ResetClient = () => {
 
@@ -15,6 +18,17 @@ const ResetClient = () => {
   const resetPassword = (e) => {
     e.preventDefault();
     setIsLoading(true);
+
+    sendPasswordResetEmail(auth,email)
+    .then(()=>{
+      setIsLoading(false)
+      toast.success('please check your email to update your password ')
+    })
+    .catch((error)=>{
+      setIsLoading(false)
+      toast.error(error.message)
+
+    })
   }
 
 
@@ -26,7 +40,7 @@ const ResetClient = () => {
         <div className={styles.form}>
           <Heading title="Update Password" subTitle="please enter your email"/>
 
-          <form>
+          <form onSubmit={resetPassword}>
             <Input
             type="text"
             placeholder='Email'
