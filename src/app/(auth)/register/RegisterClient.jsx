@@ -5,7 +5,6 @@ import React, { useState } from 'react'
 import styles from '../login/Auth.module.scss'
 import Image from 'next/image'
 import Input from '@/components/input/Input'
-import AutoSignInCheckbox from '@/components/autoSignInCheckbox/AutoSignInCheckbox'
 import Button from '@/components/button/Button'
 import Divider from '@/components/divider/Divider'
 import Link from 'next/link'
@@ -73,17 +72,17 @@ const RegisterClient = () => {
                 onChange={(e)=>setCPassword(e.target.value)}
               />
 
-            <div className={styles.buttonGroup}>
-              {/* Button */}
-             <Button type="submit" width="100%">
-             Sign in
-              </Button>
-              <Divider/>
-              <Button width="100%" secondary>
-               <Link href={"/login"} >Log in</Link> 
-              </Button>
-          
-            </div>
+              <div className={styles.buttonGroup}>
+                {/* Button */}
+                <Button type="submit" width="100%">
+                  Sign in
+                </Button>
+                <Divider/>
+                <Button width="100%" secondary>
+                  <Link href={"/login"} >Log in</Link> 
+                </Button>
+            
+              </div>
           </form>
         </div>
       </section>
