@@ -9,6 +9,9 @@ import Button from '@/components/button/Button'
 import Divider from '@/components/divider/Divider'
 import Link from 'next/link'
 import LogoPath from '@/assets/colorful.svg'
+import { toast } from 'react-toastify'
+import { createUserWithEmailAndPassword } from 'firebase/auth'
+import { auth } from '@/firebase/firebase'
 
 
 const RegisterClient = () => {
@@ -22,7 +25,29 @@ const RegisterClient = () => {
 
   const registerUser=(e)=>{
     e.preventDefault();
+
+    if(password!==cPassword){
+      return toast.error('password does not match')
+         
+    }
+
     setIsLoading(true);
+
+    createUserWithEmailAndPassword(auth,email,password)
+    .then((userCredential)=>{
+      const user=userCredential.user;
+      console.log(user);
+      setIsLoading(false);
+
+      toast.success("success sign up");
+      router.push('/login')
+
+    })
+    .catch((error)=>{
+      setIsLoading(false);
+      toast.error(error.message);
+
+    })
   }
 
   return (
@@ -81,7 +106,6 @@ const RegisterClient = () => {
                 <Button width="100%" secondary>
                   <Link href={"/login"} >Log in</Link> 
                 </Button>
-            
               </div>
           </form>
         </div>
