@@ -74,9 +74,9 @@ function Footer() {
       <div className={styles.copyrightArea}>
         <div className={styles.copyrightAreaInner}>
           <div className={styles.copyright}>
-            <span>Among the products sold in the cyber mall are marketplace (open market) products sold by individual sellers registered with Coupang.</span>
-            <span>In the case of marketplace (open market) products, Coupang is a mail order broker and is not a party to mail order</span>
-            <span>Coupang is not responsible for marketplace (open market) products, transaction information, and transactions.</span>
+            <span>Among the products sold in the cyber mall are marketplace  products sold by individual sellers registered with Coupang.</span>
+            <span>In the case of marketplace products, Coupang is a mail order broker and is not a party to mail order</span>
+            <span>Coupang is not responsible for marketplace  products, transaction information, and transactions.</span>
             <span>Coupang operates a trust management center (CM112@coupang.com ) for consumer protection and safety transactions, and in the event of a related dispute, the dispute is handled according to a separate dispute handling procedure.</span>
             <small className={styles.copyrightText}>
               Copyright &copy; Coupang Corp. 2010-2020 All Right Reserved.
