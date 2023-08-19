@@ -48,28 +48,27 @@ function Header() {
     <header>
       <div className={styles.loginBar}>
         <ul className={styles.list}>
-
-        <li>
-          <Link href={"/login"}>log in</Link>
-        </li>
-        <li>
-          <Link href={"/admin/dashboard"}>admin</Link>
-        </li>
-        <li>
-          <Link href={"/order-history"}>order </Link>
-        </li>
-        <li>
-          <Link href={"/"} onClick={logoutUser}>log out</Link>
-        </li>
-        <li>
-          <Link href={"/"}>marketing</Link>
-        </li>
-        <li>
-          <Link href={"/"}>coupan play</Link>
-        </li>
-        <li>
-          <Link href={"/"}>customer center</Link>
-        </li>
+          {/* <li className={styles.item}>
+            <Link href={"/login"}>log in</Link>
+          </li>
+          <li className={styles.item}>
+            <Link href={"/admin/dashboard"}>admin</Link>
+          </li> */}
+          <li className={styles.item}>
+            <Link href={"/order-history"}>order </Link>
+          </li>
+          <li className={styles.item}>
+            <Link href={"/"} onClick={logoutUser}>log out</Link>
+          </li>
+          <li className={styles.item}>
+            <Link href={"/"}>marketing</Link>
+          </li>
+          <li className={styles.item}>
+            <Link href={"/"}>coupang play</Link>
+          </li>
+          <li className={styles.item}>
+            <Link href={"/"}>customer center</Link>
+          </li>
         </ul>
       </div>
       {
